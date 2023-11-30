@@ -1,0 +1,15 @@
+{
+  "name": "temperature-analysis",
+  "version": "1.0.0",
+  "description": "Analyze temperature data.",
+  "main": "index.js",
+  "repository": "git@github.com:seo-family/temperature-analysis.git",
+  "author": "platfowner",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "line-reader": "^0.4.0",
+    "lodash": "^4.17.21",
+    "moment-timezone": "^0.5.43"
+  }
+}
