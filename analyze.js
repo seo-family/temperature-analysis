@@ -8,6 +8,12 @@ function writeFile(text, file) {
   fs.writeFileSync(file, text, 'utf8');
 }
 
+function getUnixTimeForDateString(dateString) {
+  const dateTimeStringForUnix = `${dateString} 00:00:00 +09:00`;
+  const dateTimeForUnix = moment(dateTimeStringForUnix, 'YYYY-MM-DD HH:mm:ss Z', true);
+  return dateTimeForUnix.valueOf();
+}
+
 function analyzeRecords(recordList) {
   const minMap = new Map();
   const maxMap = new Map();
@@ -50,11 +56,11 @@ function processCsv(inputFile) {
     const splitted = _.split(line, ',').map((item) => _.trim(item));
     if (splitted.length === 3) {
       const dateTimeString = `${splitted[0]} ${splitted[1]} +09:00`;
-      const dateTime = moment(dateTimeString, "MM/DD/YYYY HH:mm:ss Z", true);
+      const dateTime = moment(dateTimeString, 'MM/DD/YYYY HH:mm:ss Z', true);
       if (dateTime.isValid()) {
         const temperature = Number(splitted[2]);
         const dateString = dateTime.format('YYYY-MM-DD');
-        const unixTime = dateTime.valueOf();
+        const unixTime = getUnixTimeForDateString(dateString);
         records.push({
           unixTime,
           dateString,
