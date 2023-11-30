@@ -81,6 +81,10 @@ function main() {
     usage();
   }
   const inputFile = process.argv[2];
+  if (!fs.existsSync(inputFile)) {
+    console.log(`Non-existing file: ${inputFile}\n`);
+    usage();
+  }
   processCsv(inputFile);
 }
 
