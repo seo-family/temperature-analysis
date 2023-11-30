@@ -57,6 +57,10 @@ function processCsv(inputFile) {
     if (splitted.length === 3) {
       const dateTimeString = `${splitted[0]} ${splitted[1]} +09:00`;
       const dateTime = moment(dateTimeString, 'MM/DD/YYYY HH:mm:ss Z', true);
+      // Adjustment:
+      // const dateTimeTemp = moment(dateTimeString, 'MM/DD/YYYY HH:mm:ss Z', true);
+      // const unixTimeTemp = dateTimeTemp.valueOf() + 1649516400000 - 1644159600000;
+      // const dateTime = moment(unixTimeTemp);
       if (dateTime.isValid()) {
         const temperature = Number(splitted[2]);
         const dateString = dateTime.format('YYYY-MM-DD');
