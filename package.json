@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Temperature analysis tools.",
   "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": "git@github.com:seo-family/temperature-analysis.git",
   "keywords": [
     "temperature",
