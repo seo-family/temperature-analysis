@@ -1,9 +1,13 @@
 {
   "name": "temperature-analysis",
   "version": "1.0.0",
-  "description": "Analyze temperature data.",
+  "description": "Temperature analysis tools.",
   "main": "index.js",
   "repository": "git@github.com:seo-family/temperature-analysis.git",
+  "keywords": [
+    "temperature",
+    "analysis"
+  ],
   "author": "platfowner",
   "license": "MIT",
   "private": false,
