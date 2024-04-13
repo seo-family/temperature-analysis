@@ -57,9 +57,13 @@ function processCsv(inputFile) {
     if (splitted.length === 3) {
       const dateTimeString = `${splitted[0]} ${splitted[1]} +09:00`;
       const dateTime = moment(dateTimeString, 'MM/DD/YYYY HH:mm:ss Z', true);
-      // Adjustment:
+      // Adjustment for 2021 Winter B:
       // const dateTimeTemp = moment(dateTimeString, 'MM/DD/YYYY HH:mm:ss Z', true);
-      // const unixTimeTemp = dateTimeTemp.valueOf() + 1649516400000 - 1644159600000;
+      // const unixTimeTemp = dateTimeTemp.valueOf() + 1649516400000 - 1644073200000;
+      // const dateTime = moment(unixTimeTemp);
+      // Adjustment for 2022 Winter B:
+      // const dateTimeTemp = moment(dateTimeString, 'MM/DD/YYYY HH:mm:ss Z', true);
+      // const unixTimeTemp = dateTimeTemp.valueOf() + 1668265200000 - 1669215600000;
       // const dateTime = moment(unixTimeTemp);
       if (dateTime.isValid()) {
         const temperature = Number(splitted[2]);
